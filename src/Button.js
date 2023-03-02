@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 
 export function Button({ text, name }) {
-    console.log(text);
     if (!text) {
         console.error("The text is required")
     }
-    return <button>
+    return <button onClick={function () {
+        alert("Hi bro")
+    }}>
         {text} - {name}
     </button>
 }
@@ -15,5 +16,5 @@ Button.propTypes = {
 }
 
 Button.defaultProps = {
-    name: "Someone"
+    name: "To the backend"
 }
