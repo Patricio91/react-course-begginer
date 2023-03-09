@@ -1,22 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Button } from "./Button";
-import { Greeting, UserCard } from "./Greeting";
-import Product, { NavBar } from "./Product";
-import { Saludar } from "./Class-Saludar";
-import { TaskCard } from "./Task";
-import { Post } from "./Posts";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// Siempre debe haber un elemento que contenga al resto, por eso los div's
+// Siempre debe haber un elemento que contenga al resto, por eso los div's para contener elementos
 
-const handlerChange = (e) => {
-    console.log(e.target.value + " ...")
-}
+const users = [
+    {
+        id: 1,
+        name: "Patricio",
+        image: "https://robohash.org/user1"
+    },
+    {
+        id: 5,
+        name: "Federico",
+        image: "https://robohash.org/user5"
+    },
+    {
+        id: 10,
+        name: "Federico",
+        image: "https://robohash.org/user10"
+    }
+]
+
 
 root.render(
     <>
-
-        <Post />
+        {users.map((user, i) => {
+            return (
+                <div key={i}>
+                    <h1>{user.name}</h1>
+                    <img src={user.image} />
+                </div>
+            );
+        })}
+        {/* <Post /> */}
 
         {/* <TaskCard ready={true} />
         <Saludar /> */}

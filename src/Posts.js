@@ -1,3 +1,5 @@
+import { MdGetApp } from "react-icons/md";
+
 export const Post = () => {
     return <button onClick={() => {
         fetch("https://jsonplaceholder.typicode.com/posts")
@@ -5,6 +7,6 @@ export const Post = () => {
             .then(data => console.log(data))
             .catch(error => console.error(error))
     }}>
-        Give me the data
+        Give me the data <MdGetApp />
     </button>
 }
